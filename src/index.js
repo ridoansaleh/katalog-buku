@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import App from './components/App';
-import Book from './components/Book';
+import Home from './pages/Home';
+import Book from './pages/Book';
+import './css/App.css';
 
-const AppRouter = () => {
-  return (
-    <BrowserRouter>
-      <Route exact path="/" component={App} />
-      <Route path="/book/:id" component={Book} />
-    </BrowserRouter>
-  );
-};
+const AppRouter = () => (
+  <BrowserRouter>
+    <Route exact path="/" component={Home} />
+    <Route path="/book/:id" component={Book} />
+  </BrowserRouter>
+);
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));
 
