@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../css/App.css';
+import { Navbar } from '../components/Navbar';
 import { API_BASE_URL } from '../constant';
 
-class App extends Component {
+class Home extends Component {
   constructor() {
     super();
 
@@ -34,7 +34,6 @@ class App extends Component {
   handleKeywordChange(e) {
     const { listOfBook } = this.state;
     const val = e.target.value;
-
     this.setState(
       {
         searchKeyword: val,
@@ -56,9 +55,7 @@ class App extends Component {
     const { searchKeyword, books } = this.state;
     return (
       <div>
-        <div className="navbar">
-          <span className="navbar-title">Toko Buku</span>
-        </div>
+        <Navbar />
         <section className="search-box">
           <input
             type="text"
@@ -93,4 +90,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;

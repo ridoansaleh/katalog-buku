@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Navbar } from '../components/Navbar';
 import { API_BASE_URL } from '../constant';
 
-export default class Book extends React.Component {
+class Book extends Component {
+  static propTypes = {
+    match: PropTypes.object,
+  };
+
   constructor() {
     super();
 
@@ -30,9 +36,7 @@ export default class Book extends React.Component {
     const { book } = this.state;
     return (
       <div>
-        <div className="navbar">
-          <span className="navbar-title">Toko Buku</span>
-        </div>
+        <Navbar />
         <p className="breadcrumbs">
           <Link to="/">Home</Link> / {book.title}
         </p>
@@ -50,3 +54,5 @@ export default class Book extends React.Component {
     );
   }
 }
+
+export default Book;
