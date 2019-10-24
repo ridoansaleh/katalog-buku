@@ -1,8 +1,8 @@
 # Katalog Buku
 
-Cara menjalankan aplikasi ini pada komputer mu:
+Cara menjalankan aplikasi ini pada komputer Anda:
 
-1. Klon repositori ini atau download manual
+1. Klon repositori ini atau download secara manual
 
    `git clone git@github.com:ridoansaleh/katalog-buku.git`
 
@@ -14,6 +14,6 @@ Cara menjalankan aplikasi ini pada komputer mu:
 
    `npm start` atau `yarn start`
 
-4. Tunggu, `webpack-dev-server` akan membuka aplikasi secara otomatis (browser)
+4. Tunggu, `webpack-dev-server` akan membuka aplikasi Anda secara otomatis pada browser
 
 5. Selesai
