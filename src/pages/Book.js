@@ -22,12 +22,12 @@ class Book extends Component {
     const ID = this.props.match.params.id;
     axios
       .get(API_BASE_URL + '/books/' + ID)
-      .then(res => {
+      .then((res) => {
         this.setState({
           book: res.data,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -35,7 +35,7 @@ class Book extends Component {
   render() {
     const { book } = this.state;
     return (
-      <div>
+      <div className="page-container">
         <Navbar />
         <p className="breadcrumbs">
           <Link to="/">Home</Link> / {book.title}
