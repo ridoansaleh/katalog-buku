@@ -77,7 +77,7 @@ class Home extends Component {
                     <p>Rating {book.rating}</p>
                   </div>
                   <p>{book.author}</p>
-                  <Link to={`/book/${book.id}`}>
+                  <Link to={`/katalog-buku/book/${book.id}`}>
                     <button type="button" className="book-show-btn">
                       Lihat
                     </button>

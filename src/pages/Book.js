@@ -38,7 +38,7 @@ class Book extends Component {
       <div className="page-container">
         <Navbar />
         <p className="breadcrumbs">
-          <Link to="/">Home</Link> / {book.title}
+          <Link to="/katalog-buku">Home</Link> / {book.title}
         </p>
         <section className="book-detail-container">
           <div className="book-detail-cover-wrapper">
