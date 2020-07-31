@@ -20,13 +20,13 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get(API_BASE_URL + '/books')
-      .then(res => {
+      .then((res) => {
         this.setState({
           books: res.data,
           listOfBook: res.data,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -39,7 +39,7 @@ class Home extends Component {
         searchKeyword: val,
       },
       () => {
-        const result = listOfBook.filter(book => {
+        const result = listOfBook.filter((book) => {
           if (book.title.startsWith(val[0]) || book.title.search(val) > -1) {
             return book;
           }
@@ -54,37 +54,39 @@ class Home extends Component {
   render() {
     const { searchKeyword, books } = this.state;
     return (
-      <div>
+      <div className="page-container">
         <Navbar />
-        <section className="search-box">
-          <input
-            type="text"
-            className="search-input"
-            value={searchKeyword}
-            onChange={this.handleKeywordChange}
-            placeholder="Cari nama buku"
-          />
-        </section>
-        <section className="books-container">
-          {books.map(book => {
-            return (
-              <div key={book.id}>
-                <img src={book.cover} className="book-cover" />
-                <p className="book-title">{book.title}</p>
-                <div className="book-value-wrapper">
-                  <p>{book.price}</p>
-                  <p>Rating {book.rating}</p>
+        <div className="content-wrapper">
+          <section className="search-box">
+            <input
+              type="text"
+              className="search-input"
+              value={searchKeyword}
+              onChange={this.handleKeywordChange}
+              placeholder="Cari nama buku"
+            />
+          </section>
+          <section className="books-container">
+            {books.map((book) => {
+              return (
+                <div key={book.id}>
+                  <img src={book.cover} className="book-cover" />
+                  <p className="book-title">{book.title}</p>
+                  <div className="book-value-wrapper">
+                    <p>{book.price}</p>
+                    <p>Rating {book.rating}</p>
+                  </div>
+                  <p>{book.author}</p>
+                  <Link to={`/book/${book.id}`}>
+                    <button type="button" className="book-show-btn">
+                      Lihat
+                    </button>
+                  </Link>
                 </div>
-                <p>{book.author}</p>
-                <Link to={`/book/${book.id}`}>
-                  <button type="button" className="book-show-btn">
-                    Lihat
-                  </button>
-                </Link>
-              </div>
-            );
-          })}
-        </section>
+              );
+            })}
+          </section>
+        </div>
       </div>
     );
   }

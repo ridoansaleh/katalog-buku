@@ -1,8 +1,17 @@
 {
   "name": "katalog-buku",
+  "homepage": "https://ridoansaleh.github.io/katalog-buku",
   "version": "1.0.0",
   "description": "Katalog Buku",
   "main": "index.js",
+  "author": "ridoansaleh",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -14,6 +23,7 @@
     "copy-webpack-plugin": "^5.0.3",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "react-hot-loader": "^4.12.3",
@@ -23,17 +33,12 @@
     "webpack-merge": "^4.2.1",
     "write-file-webpack-plugin": "^4.5.0"
   },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
-  },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
@@ -41,6 +46,5 @@
     "tutorial",
     "frontend"
   ],
-  "author": "ridoan saleh nasution",
   "license": "ISC"
 }

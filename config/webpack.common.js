@@ -40,7 +40,7 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    publicPath: '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/katalog-buku/' : '/',
     filename: 'bundle.js',
   },
 };
